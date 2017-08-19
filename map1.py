@@ -11,7 +11,7 @@ location = list(data["Names"])
 lat = list(data["Lat"])
 lon = list(data["Lon"])
 
-for lc, lt, ln in zip(location, lat, lon):
+for lt, ln, lc in zip(lat, lon, location):
     fg.add_child(folium.Marker(location=[lt, ln], popup="%s" % lc, icon=folium.Icon(color='green')))
 
 map.add_child(fg)
